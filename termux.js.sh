@@ -4,7 +4,7 @@ GITREPO="https://raw.githubusercontent.com/hydeparkny/"
 GITBRANCH="master/"
 PATHNAME="${*}"
 REPODIR="$(dirname ${PATHNAME})/"
-FILEPATH="$(echo ${PATHNAME}|sed 's!^${DIRNAME}!!)"
+FILEPATH="$(echo ${PATHNAME}|sed 's!^${DIRNAME}!!')"
 FILENAME="$(basename ${PATHNAME})"
 cd ~/bin
 # use curl instead of wget ; termux wget cannot do https
