@@ -5,7 +5,7 @@ GITBRANCH="master/"
 PATHNAME="${1}"
 TARGETDIR="${2}"
 REPODIR="$(dirname ${PATHNAME})/"
-FILEPATH="$(echo ${PATHNAME}|sed 's!^${REPODIR}!!')"
+FILEPATH=$(echo ${PATHNAME}|sed "s!^${REPODIR}!!")
 FILENAME="$(basename ${PATHNAME})"
 
 # default to mobile dir "~/bin" if dir not specified
