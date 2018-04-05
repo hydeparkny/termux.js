@@ -2,11 +2,19 @@
 # shebang with the Termux location of the Node binary
 GITREPO="https://raw.githubusercontent.com/hydeparkny/"
 GITBRANCH="master/"
-PATHNAME="${*}"
+PATHNAME="${1}"
+TARGETDIR="${2}"
 REPODIR="$(dirname ${PATHNAME})/"
 FILEPATH="$(echo ${PATHNAME}|sed 's!^${DIRNAME}!!')"
 FILENAME="$(basename ${PATHNAME})"
+
+# default to mobile dir "~/bin" if dir not specified
+if [ -z "${TARGETDIR}" ];then
 cd ~/bin
+else
+cd ${TARGETDIR}
+fi
+
 # use curl instead of wget ; termux wget cannot do https
 # neither wget nor curl set file permissions (other than default umask)
 # for file GET via http/https , so set execute attribute below for some files
