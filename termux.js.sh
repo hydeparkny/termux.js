@@ -1,6 +1,6 @@
 # download a Node script from Github and replace the Linux line 1
 # shebang with the Termux location of the Node binary
-GITREPO="https://raw.githubusercontent.com/hydeparkny/tech/"
+GITREPO="https://raw.githubusercontent.com/hydeparkny/"
 GITBRANCH="master/"
 PATHNAME="${*}"
 FILENAME="$(basename ${PATHNAME})"
